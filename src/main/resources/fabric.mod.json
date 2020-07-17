@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "meleecraft",
+  "version": "${version}",
+  "name": "Meleecraft",
+  "description": "Fox & Falco shine in minecraft",
+  "authors": [
+    "BidoofGekkouga"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/meleecraft/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "eu.petikek.MeleeCraft"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "meleecraft.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.9.0",
+    "fabric": "*"
+  }
+}
