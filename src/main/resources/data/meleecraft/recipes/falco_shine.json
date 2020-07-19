@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FDG",
+    "DRD",
+    "BWB"
+  ],
+  "key": {
+    "F": {
+      "item": "meleecraft:shine_part_1"
+    },
+    "G": {
+      "item": "meleecraft:shine_part_2"
+    },
+    "W": {
+      "item": "meleecraft:shine_part_3"
+    },
+    "R": {
+      "item": "meleecraft:fox_shine"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "B": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "meleecraft:falco_shine",
+    "count": 1
+  }
+}
+

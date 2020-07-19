@@ -1,0 +1,13 @@
+{
+    "fox_shine_blip": {
+      "sounds": [
+        "meleecraft:fox_shine_blip"
+      ]
+    },
+    "falco_shine_blip": {
+        "sounds": [
+          "meleecraft:falco_shine_blip"
+        ]
+      }
+  }
+
