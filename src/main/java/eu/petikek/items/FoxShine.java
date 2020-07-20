@@ -48,7 +48,7 @@ public class FoxShine extends Item {
             java.util.List<Entity> entityList = world.getEntities(playerEntity, new Box(playerEntity.getPos().getX() - 1, playerEntity.getPos().getY() - 1, playerEntity.getPos().getZ() - 1, playerEntity.getPos().getX() + 1, playerEntity.getPos().getY() + 1, playerEntity.getPos().getZ() + 1));
             for (Entity entity : entityList) {
                 entity.damage(DamageSource.player(playerEntity), 1.0F);
-                entity.pushAwayFrom(playerEntity);
+                this.customPushAway(playerEntity, entity, 1.3F);
                 // Creeper handling
                 CreeperEntity creeperEntity = null;
                 if (entity instanceof CreeperEntity)
@@ -62,6 +62,18 @@ public class FoxShine extends Item {
             }
         }
         return new TypedActionResult<>(ActionResult.SUCCESS, stack);
+    }
+
+    private void customPushAway(PlayerEntity playerEntity, Entity entity, float multiplier) {
+        double vectorX = ((playerEntity.getPos().x - entity.getPos().x) * -1) * multiplier;
+        double vectorY = ((playerEntity.getPos().y - entity.getPos().y) * -1) * multiplier;
+        double vectorZ = ((playerEntity.getPos().z - entity.getPos().z) * -1) * multiplier;
+        if (vectorY > 0)
+            vectorY = vectorY * -1;
+        entity.addVelocity(vectorX, vectorY, vectorZ);
+        this.log(Level.INFO,"X:" + String.valueOf(vectorX));
+        this.log(Level.INFO,"Y:" + String.valueOf(vectorY));
+        this.log(Level.INFO,"Z:" + String.valueOf(vectorZ));
     }
 
     public static void log(Level level, String message){
